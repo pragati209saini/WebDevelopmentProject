@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+<head>
+<style>
+input[type=submit] {
+  background-color: #990000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #e60000;
+}
+</style>
+</head>
+{% block content %}
+
+    <!-- Search -->
+    <div style="box-shadow: 10px 20px 190px #8C001A inset;  border: 1px solid;">
+    <div class="search" style="padding:100px 400px 0px 400px;">
+      <form action="{% url 'donorlistsite' %}" method="POST">
+          {% csrf_token %}
+          <center>
+          <h2> ENTER THE BLOOD GROUP WHICH YOU WANT TO SEARCH</h2>
+          </center>
+          <div class="input-group mb-3">
+            {{forms_search.select_blood_group}}
+            {{forms_search.select_location}}
+          </div>
+          <center>
+        <button type="submit" value=submit style="background-color:#800517; color:white;font-weight:bold; padding:10px 20px 10px 20px;">Search</button>
+      </center>
+      </form>
+    </div>
+    <div style="padding-bottom:240px;">
+    </div>
+    </div>
+    <div class="mySlides" >
+  <q>You are not important because of how long you live, you are important because of how effective you live.</q>
+  <p class="author">- Myles Munroe</p>
+</div>
+
+<div class="mySlides">
+  <q>Remember that the happiest people are not those getting more, but those giving more.</q>
+  <p class="author">- H. Jackson Brown Jr.</p>
+</div>
+
+<div class="mySlides">
+  <q>We cannot live only for ourselves. A thousand fibers connect us with our fellow men.</q>
+  <p class="author">- Herman Melville</p>
+</div>
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+   {% endblock  %}

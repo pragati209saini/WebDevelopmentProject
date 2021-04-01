@@ -1,0 +1,163 @@
+{% load static  %}
+<!DOCTYPE html>
+<html>
+    <head>
+      {% block title %} <title>web</title> {% endblock title %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block styles %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+   {% endblock styles%}
+    </head>
+    <style>
+     
+      .topnav {
+    width: 100%;
+  background-color:black
+
+;
+  overflow: auto;
+}
+
+.topnav a {
+    float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 16.66%; /* Four links of equal widths */
+  text-align: center;
+}
+
+.topnav a:hover {
+   background-color:#c83737
+;
+}
+
+.topnav a.active {
+  background-color:#b30000;
+}
+
+
+    </style>
+   
+    <body>
+    {% block body %}
+      <div class="jumbotron jumbotron-fluid" style="margin: 5px;  background-color: white;">
+        <div class="container" >
+            <img src="{% static 'polls/logo.jfif' %}" style="width:100px; height:100px;float:left;">
+          <h1 style="color:#660000;  font-weight: bold;">GRAPHIC ERA BLOOD DONATION PORTAL</h1>      
+          <p style="font-weight: bold;color:#660000;">NAAC Certified with Grade A</p>
+        </div>     
+      </div>
+     
+      <div class="topnav" >
+        <a class="active" href="/" style="font-weight:bold;color:white">HOME</a>
+        <a href="{% url 'register' %}" style="font-weight:bold;color:white">REGISTRATION</a>
+        <a href="{% url 'about' %}" style="font-weight:bold;color:white">ABOUT US</a>
+                <a  href="{% url 'group' %}" style="font-weight:bold;color:white">BLOOD GROUP INFO</a>
+
+        <a href="{% url 'searchsite1' %}" style="font-weight:bold;color:white">SEARCH BLOOD</a>
+          <a href="{% url 'contact' %}" style="font-weight:bold;color:white">CONTACT US</a>
+      </div>
+    
+
+      <div class="container" style="margin-top:30px;">
+        <div class="row" >
+          <div class="col-sm-4" >
+       
+            <h2>About Me</h2>
+            <img src="{% static 'polls/images (1).jfif' %}">
+            <br>
+            <br>
+            <p>I am the student of GRAPHIC ERA HILL UNIVERSITY DEHRADUN pursuing my bachelor of technology in computer science.And I am here to learn more and make my skills sharpen</p>
+            
+            
+          </div>
+          <div class="col-sm-8">
+            <h2>Welcome to the website of Graphic Era </h2>
+            <br>
+            <h5>“A single pint can save three lives, a single gesture can create a million smiles”</h5>
+            <br>
+            <div class="fakeimg">
+            <img src="{% static 'polls/event.jfif' %}"
+            </div>
+            <p>Blood donation camp in 2018 at GEU and GEHU</p>
+            <p>The GRAPHIC ERA FATERNITY is here for a nobel cause of blood donation, we expect from our alumni to participate in it by making themself register in REGISTRATION FORM in NAVBAR .The only source of blood for patients who need a transfusion is a generous blood donor. Blood cannot be made or manufactured outside of the body.
+
+Obviously, blood is necessary for life. It delivers oxygen and nutrients throughout the body, as well as carrying waste products away from cells.
+ Blood is made up of four types of transfusable products: red blood cells, platelets, plasma, and cryoprecipitate.
+ A single pint of blood, which is about how much a donor gives, can help more than one patient needing a blood donation</p>
+            <br>
+            <h2>ABOUT BLOOD</h2>
+            
+            <div class="fakeimg"><img src="{% static 'polls/images bl.jfif' %}"</div>
+            <p>“Donate your blood for a reason, let the reason to be life”
+Use to raised awareness for a blood drive at Crowne Plaza, Kuala Lumpur,  the quote reminds you that donating blood means supporting lifes. Simple, powerful, straight to the point, exactly the way slogan should be.</p>
+            <p>There are four major blood groups determined by the presence or absence of two antigens – A and B – on the surface of red blood cells. In addition to the A and B antigens, there is a protein called the Rh factor, which can be either present (+) or absent (–), creating the 8 most common blood types (A+, A-,  B+, B-,  O+, O-,  AB+, AB-).</p>
+          </div>
+        </div>
+      </div>
+      
+      
+      <footer class="page-footer font-small stylish-color-dark pt-4" style="background-color:  #f2dac2;">
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color lighten-3 pt-4" >
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left"style="background-color:  #f2dac2">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+  
+          <!-- Content -->
+          <h5 class="font-weight-bold text-uppercase mb-4">Graphic Era </h5>
+          <p>Established vide Act No 12 of 2011 of Uttarakhand State Legislature
+             University under Section 2(f) of the UGC Act, 1956 set up under the aegis of Graphic Era Educational Society, Dehradun.</p>
+  
+          </div>
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+  
+          <!-- Contact details -->
+          <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <p>
+                <i class="fas fa-home mr-3"></i> Dehradun,Uttrakhand,India</p>
+            </li>
+            <li>
+              <p>
+                <i class="fas fa-envelope mr-3"></i> gehu@gmail.com</p>
+            </li>
+            <li>
+              <p>
+                <i class="fas fa-phone mr-3"></i>18008906027</p>
+            </li>
+            <li>
+              <p>
+                <i class="fas fa-print mr-3"></i>7500013334</p>
+            </li>
+          </ul>
+  
+        </div>
+  </footer>
+  <!-- Footer -->
+
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+              <a href="https://www.gehu.ac.in/"> Graphic Era Hill University(GEHU)</a>
+            </div>
+          
+            <!-- Copyright -->
+        </footer>
+        {% endblock body%}
+    </body>
+</html>

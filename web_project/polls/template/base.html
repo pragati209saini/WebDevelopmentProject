@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <style>
+     .topnav {
+    width: 100%;
+  background-color:black
+
+;
+  overflow: auto;
+}
+
+.topnav a {
+    float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 16.66%; /* Four links of equal widths */
+  text-align: center;
+}
+
+.topnav a:hover {
+   background-color:#c83737
+;
+}
+
+.topnav a.active {
+  background-color:#b30000;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  padding-top:20px;
+  position: relative;
+  background: #f1f1f1f1;
+}
+
+/* Slides */
+.mySlides {
+  background:#0C090A;
+  display: none;
+  padding: 80px;
+  text-align: center;
+  font-weight:bold;
+  font-size:20px;
+  color:white;
+}
+
+
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background:#990012;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color:black;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: cornflowerblue;}
+
+</style>
+</head>
+<body style="padding-top:8px;">
+<div class="topnav" style="font-weight:bold;color:white">
+        <a href="{% url 'home' %}">HOME</a>
+        <a  href="{% url 'register' %}">REGISTRATION</a>
+        <a href="{% url 'about' %}">ABOUT US</a>
+                <a  href="{% url 'group' %}">BLOOD GROUP INFO</a>
+
+        <a class="active" href="{% url 'searchsite1' %}">SEARCH BLOOD</a>
+         <a href="{% url 'contact' %}">CONTACT US</a>
+
+      </div>
+    {% block content %}
+
+
+
+    {% endblock %}
+  
+</html>

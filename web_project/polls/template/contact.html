@@ -1,0 +1,194 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #990000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #e60000;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+.topnav {
+    width: 100%;
+  background-color: black;
+  overflow: auto;
+}
+
+.topnav a {
+    float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 16.66%; /* Four links of equal widths */
+  text-align: center;
+}
+
+.topnav a:hover {
+    background-color:#c83737;
+}
+
+.topnav a.active {
+    background-color: #b30000;
+}
+</style>
+</head>
+<body style="padding-top:8px;">
+   <div class="topnav" >
+        <a href="/"style="font-weight:bold;color:white">HOME</a>
+        <a href="{% url 'register' %}" style="font-weight:bold;color:white">REGISTRATION</a>
+        <a href="{% url 'about' %}"style="font-weight:bold;color:white">ABOUT US</a>
+        <a  href="{% url 'group' %}" style="font-weight:bold;color:white">BLOOD GROUP INFO</a>
+        <a href="{% url 'searchsite1' %}" style="font-weight:bold;color:white">SEARCH BLOOD</a>
+          <a  class="active" href="/"style="font-weight:bold;color:white">CONTACT US</a>
+
+      </div>
+    
+
+<div class="container">
+  <div style="text-align:center">
+    <h2 style="font-weight:bold;">Contact Us</h2>
+    
+  </div>
+  <div class="row">
+    <div class="column">
+    <a href="https://www.google.com/maps/place/Graphic+Era+Hill+University/@30.2734501,77.9975891,17z/data=!3m1!4b1!4m5!3m4!1s0x39092bca3fc0ccf3:0xd19900de8c24dbee!8m2!3d30.2734501!4d77.9997778">
+      <img src="{% static 'polls/screenshot (9).png' %}" style="width:105% ;height:500px;padding-top:50px;">
+      </a>
+    </div>
+
+    <div class="column">
+      <form action="{% url 'contact' %}" method="POST">
+       {% csrf_token %}
+        <table>
+        <label for="fname">First Name</label>
+        <input required type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="lname">Last Name</label>
+        <input  required type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="country">Country</label>
+        <input  required type="text" id="country" name="country" placeholder="Your country Name..">
+        <label for="subject">Reviews or Suggestion or Message</label>
+        <textarea  required  id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        </table>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer class="page-footer font-small stylish-color-dark pt-4" style="background-color:  #f2dac2">
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color lighten-3 pt-4" >
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left"style="background-color:  #f2dac2">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+  
+          <!-- Content -->
+          <h5 class="font-weight-bold text-uppercase mb-4">Graphic Era </h5>
+          <p>Established vide Act No 12 of 2011 of Uttarakhand State Legislature
+             University under Section 2(f) of the UGC Act, 1956 set up under the aegis of Graphic Era Educational Society, Dehradun.</p>
+  
+          </div>
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+  
+          <!-- Contact details -->
+          <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <p>
+                <i class="fas fa-home mr-3"></i> Dehradun,Uttrakhand,India</p>
+            </li>
+            <li>
+              <p>
+                <i class="fas fa-envelope mr-3"></i> gehu@gmail.com</p>
+            </li>
+            <li>
+              <p>
+                <i class="fas fa-phone mr-3"></i>18008906027</p>
+            </li>
+            <li>
+              <p>
+                <i class="fas fa-print mr-3"></i>7500013334</p>
+            </li>
+          </ul>
+  
+        </div>
+  </footer>
+  <!-- Footer -->
+           
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+              <a href="https://www.gehu.ac.in/"> Graphic Era Hill University(GEHU)</a>
+            </div>
+          
+            <!-- Copyright -->
+        </footer>
+</body>
+</html>

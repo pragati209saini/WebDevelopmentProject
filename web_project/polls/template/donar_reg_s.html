@@ -1,0 +1,86 @@
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <style>
+     .topnav {
+    width: 100%;
+  background-color:black
+
+;
+  overflow: auto;
+}
+
+.topnav a {
+    float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 16.66%; /* Four links of equal widths */
+  text-align: center;
+}
+
+.topnav a:hover {
+   background-color:#c83737
+;
+}
+
+.topnav a.active {
+  background-color:#b30000;
+}
+
+
+
+
+</style>
+</head>
+<body style="padding-top:8px;">
+<div class="topnav" style="font-weight:bold;color:white">
+        <a href="{% url 'home' %}">HOME</a>
+        <a class="active"  href="{% url 'register' %}">REGISTRATION</a>
+        <a href="{% url 'about' %}">ABOUT US</a>
+                <a  href="{% url 'group' %}">BLOOD GROUP INFO</a>
+
+        <a  href="{% url 'searchsite1' %}">SEARCH BLOOD</a>
+         <a href="{% url 'contact' %}">CONTACT US</a>
+      </div>
+{% block content %}
+    <div class="container-fluid">
+        <div class="form_body">
+        <br>
+            <h1 class="text-center">.......Welcome .......</h1>
+            <br>
+
+<br>
+  {% csrf_token %}
+            <h2 class="text-center">Details about {{forms.name.data}}</h2>
+<br>
+<div style="margin-left:500px">
+                <p><strong>Name:</strong> {{forms.name.data}}</p>
+                <p><strong>Gender:</strong> {{forms.gender.data}}</p>
+                <p><strong>Date Of Birth:</strong> {{forms.date_of_birth.data}}</p>
+                <p><strong>Blood Group:</strong> <span class="text-uppercase">{{forms.blood_group.data}}</span></p>
+                <p><strong>Phone Number:</strong> {{forms.phone_number.data}}</p>
+                <p><strong>Email:</strong> {{forms.email.data}}</p>
+                <p><strong>Occupation:</strong> {{forms.occupation.data}}</p>
+                <p><strong>Blood Donated Last Date:</strong> {{forms.last_donate_date.data}}</p>
+                <p><strong>Any Diseases:</strong> {{forms.any_diseases.data}}</p>
+                <p><strong>Allergies:</strong> {{forms.allergies.data}}</p>
+                <p><strong>Cardiac:</strong> {{forms.cardiac.data}}</p>
+                <p><strong>Bleeding Disorders:</strong> {{forms.bleeding_disorders.data}}</p>
+                <p><strong>HBSAG HCV HIV:</strong> {{forms.hbsAg_hcv_hIV.data}}</p>
+                <br>
+            <h3 >{{forms.name.data}} Your Registration Is Successful...</h3>
+
+</div>
+
+
+{% endblock  %}

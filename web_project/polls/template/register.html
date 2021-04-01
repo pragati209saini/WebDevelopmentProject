@@ -1,0 +1,137 @@
+{% extends "home.html" %}
+{% load static  %}
+
+
+<head>
+{% block title %}
+<title>register page</title>
+{% endblock title %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <style>
+*[role="form"] {
+   max-width: 700px;
+   padding: 15px;
+   margin: 0 auto;
+   border-radius: 0.3em;
+   background-color: #f2f2f2;
+   font-size: 20px;
+   text-transform: uppercase;}
+
+*[role="form"] h2 { 
+   font-family: 'Open Sans' , sans-serif;
+   font-size: 40px;
+   font-weight: 500;
+   color: #000000;
+   margin-top: 5%;
+   text-align: center;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+}
+input [type=submit] {
+ background-color:red;
+ border: none;
+ color: white;
+ padding: 16px 32px;
+ text-decoration: none;
+ margin: 4px 2px;
+ cursor: pointer;
+}
+</style>
+</head>
+{% block body %}
+<body style="background: url('{% static "polls/wp4323504.jpg"%}') center no-repeat ;">  
+<body style="padding-top:8px;">
+<div class="topnav" style="font-weight:bold;color:white">
+        <a href="{% url 'home' %}">HOME</a>
+        <a class="active" href="{% url 'register' %}">REGISTRATION</a>
+        <a href="{% url 'about' %}">ABOUT US</a>
+                <a  href="{% url 'group' %}">BLOOD GROUP INFO</a>
+
+        <a href="{% url 'searchsite1' %}">SEARCH BLOOD</a>
+         <a href="{% url 'contact' %}">CONTACT US</a>
+
+      </div>
+
+<div class="container" style="font-weight:bold;">
+            <div class="container-fluid">
+        <div class="form_body">
+            <h2 class="text-center font-">Blood Donor Registration Form</h2>
+            <form action="{% url 'dregdisplay' %}" method="POST">
+              {% csrf_token %}                     
+               {{forms.as_p}}
+                         {{ profile_form.as_p }}
+
+                <button type="submit" style="background-color:white;border: none;color: black;padding: 16px 32px;font-weight:bold; margin: 2px 2px;
+ cursor: pointer;">Submit</button>
+            </form>
+        </div>
+    </div>
+          </div>
+                     </center>
+            </form> <!-- /form -->
+        </div> 
+        <br>
+       <!-- ./container -->
+        <footer class="page-footer font-small stylish-color-dark pt-4" style="background-color:#f2dac2;">
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color lighten-3 pt-4" >
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left"style="background-color:  #f2dac2">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+  
+          <!-- Content -->
+          <h5 class="font-weight-bold text-uppercase mb-4">Graphic Era </h5>
+          <p>Established vide Act No 12 of 2011 of Uttarakhand State Legislature
+             University under Section 2(f) of the UGC Act, 1956 set up under the aegis of Graphic Era Educational Society, Dehradun.</p>
+  
+          </div>
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+  
+          <!-- Contact details -->
+          <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <p>
+                <i class="fas fa-home mr-3"></i> Dehradun,Uttrakhand,India</p>
+            </li>
+            <li>
+              <p>
+                <i class="fas fa-envelope mr-3"></i> gehu@gmail.com</p>
+            </li>
+            <li>
+              <p>
+                <i class="fas fa-phone mr-3"></i>18008906027</p>
+            </li>
+            <li>
+              <p>
+                <i class="fas fa-print mr-3"></i>7500013334</p>
+            </li>
+          </ul>
+  
+        </div>
+  </footer>
+  
+            <!-- Call to action -->
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+              <a href="https://www.gehu.ac.in/"> Graphic Era Hill University(GEHU)</a>
+            </div>
+          
+            <!-- Copyright -->
+        </footer>
+  {% endblock body %}
+        
